@@ -1,0 +1,130 @@
+.jumbotron {
+    color: #434343;
+    margin:0px;
+    height:500px;
+}
+
+.jumbotron h2{
+	font-size: 36px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+html,
+body {
+  margin:0px;
+  padding:0px;
+  height: 100%;
+  width: 100%;
+  font-family: 'Quicksand', 'Helvetica Neue',Helvetica,Arial, sans-serif;
+  font-size: 16px;
+  background: white;
+  color: #666;
+}
+
+.container-fluid {
+    margin:0px;
+    padding:0px;
+}
+
+
+
+.reveal-animation:hover {
+  font-size: 22px;
+}
+
+.register-container p {
+	color: white;
+	font-size: 18px;
+	padding: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header {
+  font-size: 18px;
+  /*border-bottom: 1px solid #e5e5e5;*/
+  background:#940F35;
+  padding:0px;
+  margin:0px;
+  border: none;
+  border-radius: 0px;
+  box-shadow: 0px 0px 20px  #000;
+}
+.latest-ads{
+    
+}
+.register-container {
+	background-color: #EAE7E8;
+	/*box-shadow: 1px 1px 5px  #000;*/
+}
+.search-bar {
+    background-color: rgb(81, 105, 130);
+    height:60px;
+    border-radius: 0px;
+}
+.header li {
+  line-height:40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header .nav-stacked li {
+  line-height:20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar-header{
+  background: #EEE;
+  padding:0px;
+  margin:0px;
+}
+
+.nav-stacked{
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+.logo{
+	text-align:center;
+}
+
+.nav-pills >li a:hover{
+	background-color: #319849;
+	color:white;
+}
+
+.nav-pills > .active > a {
+	background-color: #319849 !important;
+}
+
+.header-buttons {
+    line-height:70px;
+}
+
+.post-ad-btn:hover{
+    background-color: #69B91C;
+    color: white;
+}
+
+.post-ad-btn {
+    background-color: rgb(81, 105, 130);
+    color: white;
+}
+
+.header-buttons a{
+    color: white;
+    margin-left: 4px;
+    margin-right: 4px;
+}

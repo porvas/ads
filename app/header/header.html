@@ -1,0 +1,77 @@
+<div class="header navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<div class="container-fluid logo" style="background-color: #FFF;">
+				<!--<img src="http://www.privateinstituteoflaw.com/wp-content/uploads/2014/10/Logo_PIL.png" alt="" style="max-width: 180px;">-->
+			</div>
+			<div class="container-fluid">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			  <span class="sr-only">Toggle navigation</span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+			</div>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="header-buttons pull-right">
+                        
+               
+                      <a>Welcome {{guest}}</a>
+                      <a href="#login">Login</a>
+                      <a>Help</a>
+                      <a>My Mantra</a>
+                      <div class="btn post-ad-btn">Post Add</div>
+                      
+ <!--	                     <ul class="nav nav-pills pull-right">
+		<li ng-class="{active:isActive('#/home')}"><a href="#/home">Home</a></li>
+			<li ng-class="{active:isActive('#/training')}"><a href="#/training">Training</a></li>
+			<li ng-class="{active:isActive('#/login')}"><a href="#login">Login</a></li>
+			<li ng-class="{active:isActive('#/help')}"><a href="#page5">Help</a></li>-->
+		  <!--</ul>-->
+                        </div>
+		</div>
+	</div>
+</div>
+
+<!--<nav id="myNav" class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+		<div class='navbar-brand'>
+			<img style="max-width:210px;" src="http://www.privateinstituteoflaw.com/wp-content/uploads/2014/10/Logo_PIL.png">
+		</div>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a class="reveal-animation" href="#/">Home</a></li>
+        <li><a class="reveal-animation" href="#page1">Training</a></li>
+        <li><a class="reveal-animation" href="#page2">Career</a></li>
+        <li><a class="reveal-animation" href="#page3">Testimonials</a></li>
+        <li><a class="reveal-animation" href="#page4">Contact</a></li>
+        <li><a class="reveal-animation" href="#page5">About Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>-->
+
+<script>
+//	$( document ).ready( function(){
+//		$(".nav a").on("click", function(e){
+//		   e.preventDefault();
+//		   $(".nav").find(".active").removeClass("active");
+//		   $(this).parent().addClass("active");
+//		});
+//	});
+//Stack menu when collapsed
+$('#bs-example-navbar-collapse-1').on('show.bs.collapse', function() {
+    $('.nav-pills').addClass('nav-stacked');
+    $('.header').addClass('nav-stacked');
+});
+
+//Unstack menu when not collapsed
+$('#bs-example-navbar-collapse-1').on('hide.bs.collapse', function() {
+    $('.nav-pills').removeClass('nav-stacked');
+    $('.header').removeClass('nav-stacked');
+});
+</script>

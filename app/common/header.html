@@ -1,0 +1,30 @@
+<nav class="headernav navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">theMANTRA</a>
+        </div>
+        <div ng-controller="DropdownCtrl" id="navbar" class="navbar-collapse collapse">
+            <ul class="nav nav-pills navbar-right">
+                <li class="hvr-float-shadow"><a class="hvr-float-shadow" href='#/login'>Login</a></li>
+                <li><a href='#/view2'>Help</a></li>
+                <li uib-dropdown on-toggle="toggled(open)">
+                    <a href id="simple-dropdown" uib-dropdown-toggle>
+                        My Mantra <span class="caret"></span>
+                    </a>
+                    <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">
+                        <li ng-repeat="choice in items">
+                            <a href>{{choice}}</a>
+                        </li>
+                    </ul>
+                </li>            
+                <li><button class='btn btn-success navbar-btn'>Post Ad</button></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
