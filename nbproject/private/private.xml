@@ -6,5 +6,14 @@
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/app.css</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/home.html</file>
         </group>
+        <group name="NSIS2CroatiaTrunk">
+            <file>file:/C:/porf/ads/package.json</file>
+            <file>file:/C:/porf/ads/bower.json</file>
+            <file>file:/C:/porf/ads/app/bower_components/html5-boilerplate/dist/css/main.css</file>
+            <file>file:/C:/porf/ads/app/bower_components/html5-boilerplate/dist/css/normalize.css</file>
+            <file>file:/C:/porf/ads/app/bower_components/angular-bootstrap/ui-bootstrap.js</file>
+            <file>file:/C:/porf/ads/app/home.html</file>
+            <file>file:/C:/porf/ads/app/index.html</file>
+        </group>
     </open-files>
 </project-private>
