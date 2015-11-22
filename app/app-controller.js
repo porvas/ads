@@ -8,6 +8,7 @@ myApp.controller("ShellController", ['$scope', function ($scope) {
 
             console.log("Subscribed user!");
         };
+       
     }]);
 
 myApp.config(['$routeProvider', function ($routeProvider) {

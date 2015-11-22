@@ -10,24 +10,27 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="scripts/html5-boilerplate/normalize.css">
-  <link rel="stylesheet" href="scripts/bootstrap/bootstrap.css">
   <link rel="stylesheet" href="scripts/html5-boilerplate/main.css">
+  <link rel="stylesheet" href="scripts/glyphicons-halflings/glyphicons-halflings.css">
+  <link rel="stylesheet" href="scripts/bootstrap/bootstrap.css" type="text/css">
+  <script type="text/javascript" src="scripts/jquery/jquery.js"></script>
+  <script type="text/javascript" src="scripts/bootstrap/bootstrap.js"></script>
+  <link rel="stylesheet" href="scripts/bootstrap-multiselect/bootstrap-multiselect.css" type="text/css">
+  <script type="text/javascript" src="scripts/bootstrap-multiselect/bootstrap-multiselect.js"></script>  
   <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/hover.css">
   <script src="scripts/html5-boilerplate/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-app="myApp" class="ng-cloak">
     <div ng-controller="ShellController">
         <header></header>
+        <searchbar></searchbar>
         <div class="container-fluid" ng-view=""></div>
         <div class="container">
             <hr>
         </div>
     </div>
     <footer></footer>
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
   <script src="scripts/angular/angular.js"></script>
   <script src="scripts/angular-route/angular-route.js"></script>
   <script src="scripts/angular-bootstrap/ui-bootstrap-tpls.js"></script>

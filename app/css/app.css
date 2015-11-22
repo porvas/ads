@@ -1,13 +1,3 @@
-.jumbotron {
-    color: #434343;
-    margin:0px;
-    height:500px;
-}
-
-.jumbotron h2{
-	font-size: 36px;
-}
-
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
 }
@@ -24,23 +14,6 @@ body {
   color: #666;
 }
 
-.container-fluid {
-    margin:0px;
-    padding:0px;
-}
-
-
-
-.reveal-animation:hover {
-  font-size: 22px;
-}
-
-.register-container p {
-	color: white;
-	font-size: 18px;
-	padding: 20px;
-}
-
 h1,
 h2,
 h3,
@@ -52,65 +25,55 @@ h6 {
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header {
   font-size: 18px;
-  /*border-bottom: 1px solid #e5e5e5;*/
   background:#940F35;
-  padding:0px;
+  padding:15px;
   margin:0px;
   border: none;
   border-radius: 0px;
-  box-shadow: 0px 0px 20px  #000;
+  box-shadow: 0px 0px 15px  #000;
 }
 .latest-ads{
     
 }
-.register-container {
-	background-color: #EAE7E8;
-	/*box-shadow: 1px 1px 5px  #000;*/
-}
-.search-bar {
-    background-color: rgb(81, 105, 130);
-    height:60px;
-    border-radius: 0px;
-}
-.header li {
-  line-height:40px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+
+.multiple-ads-container{
+    padding:4px;
+    margin:4px;
 }
 
-.header .nav-stacked li {
-  line-height:20px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.navbar-header{
-  background: #EEE;
-  padding:0px;
-  margin:0px;
-}
-
-.nav-stacked{
-	width:100%;
-	margin:0px;
-	padding:0px;
+.multiple-ads-container img{
+    height:150px;
+    width:150px;
+    padding:4px;
+    margin:4px;
 }
 
 .logo{
 	text-align:center;
 }
 
-.nav-pills >li a:hover{
-	background-color: #319849;
-	color:white;
+.logoMain{
+     text-align:center;
+     height: 60px;
+     margin-top:-10px;
+     margin-bottom: -10px;
+     padding:0px;
 }
 
-.nav-pills > .active > a {
-	background-color: #319849 !important;
+.vertically-align-outer {
+    display:table;
 }
 
-.header-buttons {
-    line-height:70px;
+.vertically-align-inner {
+    display:table-cell;
+}
+
+.search-bar {
+    background-color: rgb(81, 105, 130);
+    border-radius: 0px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    width:100%;
 }
 
 .post-ad-btn:hover{
@@ -122,9 +85,26 @@ h6 {
     background-color: rgb(81, 105, 130);
     color: white;
 }
+.header-buttons.pull-right{
+    color: #EAE7E8;
+}
+
+.header-buttons span{
+    color: #EAE7E8;
+    padding: 10px;
+}
 
 .header-buttons a{
+    color: #EAE7E8;
+    padding: 10px;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.header-buttons a:hover,
+.header-buttons a:focus{
     color: white;
-    margin-left: 4px;
-    margin-right: 4px;
+    text-decoration: none;
 }

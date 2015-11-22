@@ -5,5 +5,3 @@ myApp.directive('header', function () {
         controller: "HeaderController"
     }
 });
-
-

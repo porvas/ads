@@ -16,6 +16,7 @@ myApp.controller("ShellController", ['$scope', function ($scope) {
 
             console.log("Subscribed user!");
         };
+       
     }]);
 
 myApp.config(['$routeProvider', function ($routeProvider) {
@@ -62,15 +63,7 @@ myApp.directive('footer', function () {
     }
 });
 myApp.controller("HeaderController", ['$scope', '$location', function($scope, $location) {
-	$scope.header="I am the header";
-	$scope.guest="Guest";
-    $scope.isActive = function(path){
-      var currentPath = $location.path().split('/')[1];
-      if (currentPath.indexOf('?') !== -1) {
-        currentPath = currentPath.split('?')[0];
-      }
-      return currentPath === path.split('/')[1];
-    };
+	$scope.guest="Porfyrios";
 }]);
 
 myApp.directive('header', function () {
@@ -80,9 +73,48 @@ myApp.directive('header', function () {
         controller: "HeaderController"
     }
 });
-
-
-
 myApp.controller('LoginController', [function() {
 
 }]);
+myApp.controller("SearchBarController", ['$scope', function($scope) {
+    angular.element(document).ready(function () {
+        $('#catsDropdown').multiselect({
+            enableCollapsibleOptGroups:true,
+            buttonWidth:200
+        });
+        $('#locationsDropdown').multiselect({
+            buttonWidth:200,
+            includeSelectAllOption:true,
+            selectAllValue:"all",
+            selectAllName:"selectAll",
+            nonSelectedText:"Select location...",
+            selectAllText:"Select all locations"
+        });
+    });
+}]);
+
+myApp.directive('searchbar', function() {
+    var directive = {};
+
+    directive.restrict = 'E';
+    directive.templateUrl = "search_bar/searchbar.html";
+    directive.controller= "SearchBarController";
+
+    return directive;
+});
+
+
+
+myApp.controller("ThumbController", ['$scope', function($scope) {
+	$scope.title="";
+}]);
+myApp.directive('adthumb', function () {
+    return {
+        restrict: 'E',
+        templateUrl: "common/adthumb/adthumb.html",
+        scope: {
+            title: '@title'
+        },
+        controller: "ThumbController"
+    };
+});

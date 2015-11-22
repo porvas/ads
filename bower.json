@@ -12,28 +12,29 @@
     "angular-mocks": "~1.4.0",
     "html5-boilerplate": "~5.2.0",
     "angular-bootstrap": "0.14.3",
-    "bootstrap": "3.3.5",
-    "ui-bootstrap": "0.14.3"
+    "bootstrap": "latest",
+    "ui-bootstrap": "latest",
+    "jquery": "latest"
   },
-  "install" : {
-    "path" : "app/scripts/",
-	"sources" : {
-		"angular-bootstrap": "app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
-		"angular-loader": "app/bower_components/angular-loader/angular-loader.js",
-		"angular-mocks": "app/bower_components/angular-mocks/angular-mocks.js",
-		"angular": "app/bower_components/angular/angular.js",
-		"html5-boilerplate": [
-			"app/bower_components/html5-boilerplate/dist/css/normalize.css",
-			"app/bower_components/html5-boilerplate/dist/css/main.css",
-			"app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"
-		],
-		"angular-route": "app/bower_components/angular-route/angular-route.js",
-		"jquery": "app/bower_components/jquery/dist/jquery.js",
-		"bootstrap": [
-		  "app/bower_components/bootstrap/dist/css/bootstrap.css",
-		  "app/bower_components/bootstrap/dist/js/bootstrap.js"
-		],
-		"ui-bootstrap": "app/bower_components/ui-bootstrap"
+  "install": {
+    "path": "app/scripts/",
+    "sources": {
+      "angular-bootstrap": "app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+      "angular-loader": "app/bower_components/angular-loader/angular-loader.js",
+      "angular-mocks": "app/bower_components/angular-mocks/angular-mocks.js",
+      "angular": "app/bower_components/angular/angular.js",
+      "html5-boilerplate": [
+        "app/bower_components/html5-boilerplate/dist/css/normalize.css",
+        "app/bower_components/html5-boilerplate/dist/css/main.css",
+        "app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"
+      ],
+      "angular-route": "app/bower_components/angular-route/angular-route.js",
+      "jquery": "app/bower_components/jquery/dist/jquery.js",
+      "bootstrap": [
+        "app/bower_components/bootstrap/dist/css/bootstrap.css",
+        "app/bower_components/bootstrap/dist/js/bootstrap.js"
+      ],
+      "ui-bootstrap": "app/bower_components/ui-bootstrap"
     }
   }
 }

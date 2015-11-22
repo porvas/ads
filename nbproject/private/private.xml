@@ -2,10 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/app.css</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/home.html</file>
-        </group>
         <group name="NSIS2CroatiaTrunk">
             <file>file:/C:/porf/ads/package.json</file>
             <file>file:/C:/porf/ads/bower.json</file>
@@ -14,6 +10,17 @@
             <file>file:/C:/porf/ads/app/bower_components/angular-bootstrap/ui-bootstrap.js</file>
             <file>file:/C:/porf/ads/app/home.html</file>
             <file>file:/C:/porf/ads/app/index.html</file>
+        </group>
+        <group>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/app-controller.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/search_bar/searchbar.controller.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/index.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/css/app.css</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/login/login.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/header/header.controller.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/header/header.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/search_bar/searchbar.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/home.html</file>
         </group>
     </open-files>
 </project-private>
