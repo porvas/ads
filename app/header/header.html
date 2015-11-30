@@ -26,7 +26,10 @@
                         
                
                         <span>Welcome {{guest}}  <a href="#home">(Logout)</a></span>
-                      <a href="#login">Login</a>
+                            <a ng-if="!isAuthenticated()" href="#login">Login</a>
+                            <a ng-if="!isAuthenticated()" href="#signup">Signup</a>
+                            <a ng-if="isAuthenticated()" href="#">Logged In</a>
+                      
                       <a href="#">Help</a>
                       <a href="#">My Mantra</a>
                       <div class="btn post-ad-btn">Post your add!</div>

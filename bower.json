@@ -8,6 +8,7 @@
   "dependencies": {
     "angular": "~1.4.0",
     "angular-route": "~1.4.0",
+    "angular-resource": "latest",
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
     "html5-boilerplate": "~5.2.0",
@@ -20,21 +21,22 @@
     "path": "app/scripts/",
     "sources": {
       "angular-bootstrap": "app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
-      "angular-loader": "app/bower_components/angular-loader/angular-loader.js",
-      "angular-mocks": "app/bower_components/angular-mocks/angular-mocks.js",
-      "angular": "app/bower_components/angular/angular.js",
+      "angular-loader": "app/bower_components/angular-loader/angular-loader.min.js",
+      "angular-mocks": "app/bower_components/angular-mocks/angular-mocks.min.js",
+      "angular": "app/bower_components/angular/angular.min.js",
       "html5-boilerplate": [
         "app/bower_components/html5-boilerplate/dist/css/normalize.css",
         "app/bower_components/html5-boilerplate/dist/css/main.css",
         "app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"
       ],
-      "angular-route": "app/bower_components/angular-route/angular-route.js",
+      "angular-route": "app/bower_components/angular-route/angular-route.min.js",
       "jquery": "app/bower_components/jquery/dist/jquery.js",
       "bootstrap": [
         "app/bower_components/bootstrap/dist/css/bootstrap.css",
         "app/bower_components/bootstrap/dist/js/bootstrap.js"
       ],
-      "ui-bootstrap": "app/bower_components/ui-bootstrap"
+      "angular-resource": "app/bower_components/angular-resource/angular-resource.min.js",
+      "ui-bootstrap": "app/bower_components/satellizer/satellizer.min.js"
     }
   }
 }

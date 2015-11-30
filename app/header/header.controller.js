@@ -1,3 +1,7 @@
-myApp.controller("HeaderController", ['$scope', '$location', function($scope, $location) {
-	$scope.guest="Porfyrios";
+myApp.controller("HeaderController", ['$scope', '$location', '$auth', function($scope, $location, $auth) {
+    $scope.guest="Porfyrios";
+        
+    $scope.isAuthenticated = function() {
+      return $auth.isAuthenticated();
+    };        
 }]);

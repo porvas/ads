@@ -1,15 +1,17 @@
-myApp.controller("ShellController", ['$scope', function ($scope) {
-        $scope.name = "Main Page";
-        $scope.user = {};
-        $scope.save = function () {
-            if (!$scope.user.name || !$scope.user.email) {
-                return;
-            }
-
-            console.log("Subscribed user!");
-        };
-       
-    }]);
+myApp.controller("ShellController", function ($scope) {
+//    var entries = Entry.query(function () {
+//        console.log(entries);
+//    }); // get() returns a single entry
+//    $scope.name = "Main Page";
+//    $scope.user = {};
+//    $scope.save = function () {
+//        if (!$scope.user.name || !$scope.user.email) {
+//            return;
+//        }
+//
+//        console.log("Subscribed user!");
+//    };
+});
 
 myApp.config(['$routeProvider', function ($routeProvider) {
         $routeProvider.
@@ -24,6 +26,10 @@ myApp.config(['$routeProvider', function ($routeProvider) {
                 when('/login', {
                     templateUrl: 'login/login.html',
                     controller: 'LoginController'
+                }).
+                when('/signup', {
+                    templateUrl: 'signup/signup.html',
+                    controller: 'SignupController'
                 }).
                 when('/training', {
                     templateUrl: 'training.html',

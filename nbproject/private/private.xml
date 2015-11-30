@@ -12,16 +12,26 @@
             <file>file:/C:/porf/ads/app/index.html</file>
         </group>
         <group>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/signup/signup.controller.js</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/footer/footer.controller.js</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/scripts/bootstrap-multiselect/bootstrap-multiselect.js</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/index.html</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/css/app.css</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/gulpfile.js</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/header/header.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/search_bar/searchbar.controller.js</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/common/adthumb/adthumb.controller.js</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/header/header.directive.js</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/home.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/login/login.controller.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/scripts/satellizer/satellizer.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/common/password/passwordMatch.js</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/footer/footer.directive.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/app.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/app-controller.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/signup/signup.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/common/password/passwordStrength.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/index.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/js/mylibs.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/login/login.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/gulpfile.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/header/header.controller.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/header/header.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/home.html</file>
         </group>
     </open-files>
 </project-private>
