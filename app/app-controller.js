@@ -1,16 +1,5 @@
 myApp.controller("ShellController", function ($scope) {
-//    var entries = Entry.query(function () {
-//        console.log(entries);
-//    }); // get() returns a single entry
-//    $scope.name = "Main Page";
-//    $scope.user = {};
-//    $scope.save = function () {
-//        if (!$scope.user.name || !$scope.user.email) {
-//            return;
-//        }
-//
-//        console.log("Subscribed user!");
-//    };
+
 });
 
 myApp.config(['$routeProvider', function ($routeProvider) {

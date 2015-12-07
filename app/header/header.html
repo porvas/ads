@@ -23,12 +23,10 @@
                     </div>-->
                     
                     <div class="header-buttons pull-right">
-                        
-               
-                        <span>Welcome {{guest}}  <a href="#home">(Logout)</a></span>
+                            <span >Welcome {{name}}!</span>
                             <a ng-if="!isAuthenticated()" href="#login">Login</a>
-                            <a ng-if="!isAuthenticated()" href="#signup">Signup</a>
-                            <a ng-if="isAuthenticated()" href="#">Logged In</a>
+                            <a ng-if="!isAuthenticated()" href="#signup">Sign Up</a>
+                            <a ng-if="isAuthenticated()" ng-click="logout()" href="#logout">Logout</a>
                       
                       <a href="#">Help</a>
                       <a href="#">My Mantra</a>

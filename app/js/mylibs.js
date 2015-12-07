@@ -2,55 +2,12 @@
 
 // Declare app level module which depends on views, and components
 var myApp = angular.module('myApp', [
+  'common.services',
   'ngRoute',
   'ngResource',
   'ui.bootstrap',
   'satellizer'
 ]).config(function($authProvider){
-    $authProvider.httpInterceptor = function () {
-        return true;
-    },
-    $authProvider.withCredentials = true;
-    $authProvider.tokenRoot = null;
-    $authProvider.cordova = false;
-    $authProvider.baseUrl = '/';
-    $authProvider.loginUrl = '/auth/login';
-    $authProvider.signupUrl = '/auth/signup';
-    $authProvider.unlinkUrl = '/auth/unlink/';
-    $authProvider.tokenName = 'token';
-    $authProvider.tokenPrefix = 'satellizer';
-    $authProvider.authHeader = 'Authorization';
-    $authProvider.authToken = 'Bearer';
-    $authProvider.storageType = 'localStorage';
-
-    // Facebook
-    $authProvider.facebook({
-        name: 'facebook',
-        url: '/auth/facebook',
-        authorizationEndpoint: 'https://www.facebook.com/v2.5/dialog/oauth',
-        redirectUri: window.location.origin + '/',
-        requiredUrlParams: ['display', 'scope'],
-        scope: ['email'],
-        scopeDelimiter: ',',
-        display: 'popup',
-        type: '2.0',
-        popupOptions: {width: 580, height: 400}
-    });
-
-    // Google
-    $authProvider.google({
-        url: '/auth/google',
-        authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
-        redirectUri: window.location.origin,
-        requiredUrlParams: ['scope'],
-        optionalUrlParams: ['display'],
-        scope: ['profile', 'email'],
-        scopePrefix: 'openid',
-        scopeDelimiter: ' ',
-        display: 'popup',
-        type: '2.0',
-        popupOptions: {width: 452, height: 633}
-    });
     
     $authProvider.facebook({
       clientId: 'Facebook App ID'
@@ -80,42 +37,30 @@ var myApp = angular.module('myApp', [
       return deferred.promise;
     }    
 });
-//
-//angular.module('myApp').factory('Entry', function($resource) {
-//  return $resource('http://localhost:8282/api/Categories/:id'); // Note the full endpoint address
-//});
 
-//angular.module('myApp').controller('ResourceController',function($scope, Entry) {
-//  var entry = Entry.get({ id: $scope.id }, function() {
-//    console.log(entry);
-//  }); // get() returns a single entry
-//
-//  var entries = Entry.query(function() {
-//    console.log(entries);
-//  }); //query() returns all the entries
-//
-//  $scope.entry = new Entry(); //You can instantiate resource class
-//
-//  $scope.entry.data = 'some data';
-//
-//  Entry.save($scope.entry, function() {
-//    //data saved. do something here.
-//  }); //saves an entry. Assuming $scope.entry is the Entry object  
-//});
+//angular.module('MyApp')
+//  .factory('Account', function($http, $auth) {
+//    return {
+//      getProfile: function() {
+//        var payload = $auth.getPayload();
+//        return $http.get('/api/users/' + payload.nameid);
+//      },
+//      updateProfile: function(profileData) {
+//        return $http.put('/api/me', profileData);
+//      }
+//    };
+//  });
+
+angular.module('myApp').factory('Subcategory', function($resource) {
+  return $resource('http://localhost/APIService/api/Subcategories/:id'); // Note the full endpoint address
+});
+
+angular.module('myApp').factory('User', function($resource) {
+  return $resource('http://localhost/APIService/api/users/:id'); // Note the full endpoint address
+});
 
 myApp.controller("ShellController", function ($scope) {
-//    var entries = Entry.query(function () {
-//        console.log(entries);
-//    }); // get() returns a single entry
-//    $scope.name = "Main Page";
-//    $scope.user = {};
-//    $scope.save = function () {
-//        if (!$scope.user.name || !$scope.user.email) {
-//            return;
-//        }
-//
-//        console.log("Subscribed user!");
-//    };
+
 });
 
 myApp.config(['$routeProvider', function ($routeProvider) {
@@ -165,12 +110,43 @@ myApp.directive('footer', function () {
         controller: "FooterController"
     }
 });
-myApp.controller("HeaderController", ['$scope', '$location', '$auth', function($scope, $location, $auth) {
-    $scope.guest="Porfyrios";
-        
+myApp.controller("HeaderController", ['$scope', '$location', '$auth', 'User', '$rootScope', 
+    function($scope, $location, $auth, User, $rootScope) {
+    
+    $scope.name = "Guest";
+    
+//    $rootScope.$watch('name', function(){
+//        $scope.name = "Guest";
+//        if ($rootScope.name.trim() !== "") {
+//            $scope.name = $rootScope.name;
+//        }
+//    });
+//    
+//    $scope.logout = function() {
+//        $auth.logout()
+//            .then(function () {
+//                console.log('You have been logged out');
+//                $rootScope.name = "Guest";
+//                $location.path('/');
+//        });
+//    }
+
+//    $scope.name = function() {
+//        if ($scope.isAuthenticated()) {
+//            var user = User.get({id: $scope.getUserId()}, function () {
+//                console.log("USER: " + JSON.stringify(user));
+//            }); // get() returns a single entry   
+//            return user.FirstName;
+//        } else {
+//            return "Guest";
+//        }
+//    };
+    
     $scope.isAuthenticated = function() {
       return $auth.isAuthenticated();
-    };        
+    };  
+    
+
 }]);
 
 myApp.directive('header', function () {
@@ -180,17 +156,44 @@ myApp.directive('header', function () {
         controller: "HeaderController"
     }
 });
-myApp.controller('LoginController', [function($scope, $auth) {
+myApp.controller('LoginController', ['$scope', '$auth','$http','$rootScope',  function($scope, $auth,$http,$rootScope) {
     $scope.login = function() {
-      $auth.login($scope.user)
-        .then(function() {
-          toastr.success('You have successfully signed in');
-          $location.path('/');
-        })
-        .catch(function(response) {
-          toastr.error(response.data.message, response.status);
-        });
+        var user = {
+            grant_type:"password",
+            username: $scope.email,
+            password: $scope.password
+        };    
+        
+        var req = {
+            method: 'POST',
+            url: 'http://localhost/APIService/api/oauth/token',
+            headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            data: "userName=" + "test@gmail.com" + "&password=" + "FirstPassword" + 
+              "&grant_type=password"
+        };
+
+        $http(req).then(function(response){
+            console.log("LOGGED IN: " + response.data.access_token);
+            $auth.setToken(response.data.access_token);
+            $rootScope.name = "Porfyrios";
+        }, function(){
+            console.log("ERROR");
+        });         
+        
+//        $auth.login(user)
+//          .then(function(response) {
+////            toastr.success('You have successfully signed in');
+//              console.log("LOGGED IN");
+//              $location.path('/');
+//          })
+//          .catch(function(response) {
+//              console.log("ERROR LOGGING IN")
+////            toastr.error(response.data.message, response.status);
+//          });
     };
+    
     $scope.authenticate = function(provider) {
       $auth.authenticate(provider)
         .then(function() {
@@ -202,22 +205,88 @@ myApp.controller('LoginController', [function($scope, $auth) {
         });
     };        
 }]);
-myApp.controller("SearchBarController", ['$scope', function($scope) {
-    angular.element(document).ready(function () {
-        $('#catsDropdown').multiselect({
-            enableCollapsibleOptGroups:true,
-            buttonWidth:200
+(function(){
+    "use strict"
+    
+    angular
+        .module("myApp")
+        .controller("SearchBarController",
+                ["categoryResource",
+                    SearchBarController]);
+                    
+    function SearchBarController(categoryResource) {
+        var vm=this;
+        
+        categoryResource.query(function(data) {
+           vm.categories = data; 
+           fillCategoriesDropdown();
+           activateMultiSelect();
         });
-        $('#locationsDropdown').multiselect({
-            buttonWidth:200,
-            includeSelectAllOption:true,
-            selectAllValue:"all",
-            selectAllName:"selectAll",
-            nonSelectedText:"Select location...",
-            selectAllText:"Select all locations"
-        });
-    });
-}]);
+        
+        function activateMultiSelect() {
+            $('#catsDropdown').multiselect({
+                enableCollapsibleOptGroups:true,
+                buttonWidth:200
+            });
+            $('#locationsDropdown').multiselect({
+                buttonWidth:200,
+                includeSelectAllOption:true,
+                selectAllValue:"all",
+                selectAllName:"selectAll",
+                nonSelectedText:"Select location...",
+                selectAllText:"Select all locations"
+            });
+        }
+
+        function fillCategoriesDropdown() {
+            console.log(vm.categories);
+            vm.categories.forEach(function(item){
+               $('#catsDropdown').append("<optgroup label='"+item.name+"'>");
+               var subcats = item.subcategories;
+               subcats.forEach(function(subcat){
+                   $('#catsDropdown').find('optGroup').last().append("<option value='"+item.id+"-"+subcat.id+"'>"+subcat.name+"</option>");
+               });
+            });        
+        }        
+    }
+    
+
+}());
+//
+//myApp.controller("SearchBarController", ['$scope', 'Category', 'Subcategory', function($scope, Category, Subcategory) {
+//
+//    
+//
+//    // Fill the categories dropdown
+//    $scope.cats = Category.query(function(){
+//        $scope.cats.forEach(function(item){
+//           $('#catsDropdown').append("<optgroup label='"+item.Name+"'>");
+//           var subcats = item.Subcategories;
+//           subcats.forEach(function(subcat){
+//               $('#catsDropdown').find('optGroup').last().append("<option value='"+item.Id+"-"+subcat.Id+"'>"+subcat.Name+"</option>");
+//           });
+//        });
+//        
+//        $('#catsDropdown').multiselect({
+//            enableCollapsibleOptGroups:true,
+//            buttonWidth:200
+//        });
+//        $('#locationsDropdown').multiselect({
+//            buttonWidth:200,
+//            includeSelectAllOption:true,
+//            selectAllValue:"all",
+//            selectAllName:"selectAll",
+//            nonSelectedText:"Select location...",
+//            selectAllText:"Select all locations"
+//        });        
+//    });
+////    mv.subcats = Subcategory.query(function(){console.log(mv.subcats)});  
+//    angular.element(document).ready(function () {
+//
+//
+//    });
+//    
+//}]);
 
 myApp.directive('searchbar', function() {
     var directive = {};

@@ -21,7 +21,7 @@
   <script src="scripts/html5-boilerplate/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-app="myApp" class="ng-cloak">
-    <div ng-controller="ShellController">
+    <div ng-controller="ShellController as vm">
         <header></header>
         <searchbar></searchbar>
         <div class="container-fluid" ng-view=""></div>
@@ -35,6 +35,8 @@
   <script src="scripts/angular-resource/angular-resource.min.js"></script>
   <script src="scripts/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="scripts/satellizer/satellizer.js"></script>
+  <script src ="common/common.services.js"></script>
+  <script src ="common/categoryResource.js"></script>
   <script src ="js/mylibs.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>

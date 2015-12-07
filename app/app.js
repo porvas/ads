@@ -2,6 +2,7 @@
 
 // Declare app level module which depends on views, and components
 var myApp = angular.module('myApp', [
+  'common.services',
   'ngRoute',
   'ngResource',
   'ui.bootstrap',
@@ -36,25 +37,24 @@ var myApp = angular.module('myApp', [
       return deferred.promise;
     }    
 });
-//
-//angular.module('myApp').factory('Entry', function($resource) {
-//  return $resource('http://localhost:8282/api/Categories/:id'); // Note the full endpoint address
-//});
 
-//angular.module('myApp').controller('ResourceController',function($scope, Entry) {
-//  var entry = Entry.get({ id: $scope.id }, function() {
-//    console.log(entry);
-//  }); // get() returns a single entry
-//
-//  var entries = Entry.query(function() {
-//    console.log(entries);
-//  }); //query() returns all the entries
-//
-//  $scope.entry = new Entry(); //You can instantiate resource class
-//
-//  $scope.entry.data = 'some data';
-//
-//  Entry.save($scope.entry, function() {
-//    //data saved. do something here.
-//  }); //saves an entry. Assuming $scope.entry is the Entry object  
-//});
+//angular.module('MyApp')
+//  .factory('Account', function($http, $auth) {
+//    return {
+//      getProfile: function() {
+//        var payload = $auth.getPayload();
+//        return $http.get('/api/users/' + payload.nameid);
+//      },
+//      updateProfile: function(profileData) {
+//        return $http.put('/api/me', profileData);
+//      }
+//    };
+//  });
+
+angular.module('myApp').factory('Subcategory', function($resource) {
+  return $resource('http://localhost/APIService/api/Subcategories/:id'); // Note the full endpoint address
+});
+
+angular.module('myApp').factory('User', function($resource) {
+  return $resource('http://localhost/APIService/api/users/:id'); // Note the full endpoint address
+});
