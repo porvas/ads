@@ -42,8 +42,6 @@
             });        
         }        
     }
-    
-
 }());
 //
 //myApp.controller("SearchBarController", ['$scope', 'Category', 'Subcategory', function($scope, Category, Subcategory) {

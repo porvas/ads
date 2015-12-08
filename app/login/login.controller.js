@@ -1,49 +1,49 @@
-myApp.controller('LoginController', ['$scope', '$auth','$http','$rootScope',  function($scope, $auth,$http,$rootScope) {
-    $scope.login = function() {
-        var user = {
-            grant_type:"password",
-            username: $scope.email,
-            password: $scope.password
-        };    
-        
-        var req = {
-            method: 'POST',
-            url: 'http://localhost/APIService/api/oauth/token',
-            headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            data: "userName=" + "test@gmail.com" + "&password=" + "FirstPassword" + 
-              "&grant_type=password"
-        };
-
-        $http(req).then(function(response){
-            console.log("LOGGED IN: " + response.data.access_token);
-            $auth.setToken(response.data.access_token);
-            $rootScope.name = "Porfyrios";
-        }, function(){
-            console.log("ERROR");
-        });         
-        
-//        $auth.login(user)
-//          .then(function(response) {
-////            toastr.success('You have successfully signed in');
-//              console.log("LOGGED IN");
-//              $location.path('/');
-//          })
-//          .catch(function(response) {
-//              console.log("ERROR LOGGING IN")
-////            toastr.error(response.data.message, response.status);
-//          });
-    };
-    
-    $scope.authenticate = function(provider) {
-      $auth.authenticate(provider)
-        .then(function() {
-          toastr.success('You have successfully signed in with ' + provider);
-          $location.path('/');
-        })
-        .catch(function(response) {
-          toastr.error(response.data.message);
-        });
-    };        
-}]);
+(function(){
+	"use strict"
+	
+	angular
+		.module("myApp")
+		.controller("LoginController",
+					["userAccount", '$auth',
+						LoginCtrl]);
+						
+	function LoginCtrl(userAccount, $auth) {
+		var vm = this;
+		vm.message = "";
+		vm.userlogin = {
+			email: "",
+			password: ""
+		};
+		vm.usersignup = {
+			userName: "",
+			email: "",
+			password: "",
+			confirmPassword: ""
+		};
+		
+		vm.login = function(){
+			vm.userlogin.grant_type = "password";
+			
+			userAccount.login.loginUser(vm.userlogin,
+				function(data) {
+					vm.isLoggedIn = true;
+					vm.message = "";
+					vm.password = "";
+					$auth.setToken(data.access_token);
+					vm.token=data.access_token;
+					console.log("LOGGED IN: " + JSON.stringify($auth.getPayload()));
+				},
+				function (response) {
+					vm.isLoggedIn = false;
+					vm.message = response.statusText + "\r\n";
+					vm.password = "";
+					if (response.data.exceptionMessage) {
+						vm.message += response.data.exceptionMessage;
+					}
+					if (response.data.error) {
+						vm.message += response.data.error;
+					}
+				});
+		};
+	}
+}());

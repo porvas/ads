@@ -34,5 +34,19 @@
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/home.html</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/common/categoryResource.js</file>
         </group>
+        <group name="All Projects">
+            <file>file:/C:/porf/ads/app/header/header.controller.js</file>
+            <file>file:/C:/porf/ads/app/index.html</file>
+            <file>file:/C:/porf/ads/app/js/mylibs.js</file>
+            <file>file:/C:/porf/ads/app/login/login.html</file>
+            <file>file:/C:/porf/ads/app/app.js</file>
+            <file>file:/C:/porf/ads/app/signup/signup.controller.js</file>
+            <file>file:/C:/porf/ads/app/home.html</file>
+            <file>file:/C:/porf/ads/app/app-controller.js</file>
+            <file>file:/C:/porf/ads/app/common/userAccount.js</file>
+            <file>file:/C:/porf/ads/app/signup/signup.html</file>
+            <file>file:/C:/porf/ads/app/common/common.services.js</file>
+            <file>file:/C:/porf/ads/app/login/login.controller.js</file>
+        </group>
     </open-files>
 </project-private>

@@ -20,18 +20,6 @@ myApp.config(['$routeProvider', function ($routeProvider) {
                     templateUrl: 'signup/signup.html',
                     controller: 'SignupController'
                 }).
-                when('/training', {
-                    templateUrl: 'training.html',
-                    controller: 'ShellController'
-                }).
-                when('/page2', {
-                    templateUrl: 'page2.html',
-                    controller: 'ShellController'
-                }).
-                when('/page3', {
-                    templateUrl: 'page3.html',
-                    controller: 'ShellController'
-                }).
                 otherwise({
                     redirectTo: 'home.html'
                 });

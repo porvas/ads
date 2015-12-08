@@ -3,11 +3,11 @@
     <div class="center-form panel">
       <div class="panel-body">
         <h2 class="text-center">Sign up</h2>
-        <form method="post" ng-submit="signup()" name="signupForm">
-          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
-            <input class="form-control input-lg" type="text" name="displayName" ng-model="user.displayName" placeholder="Name" required autofocus>
+        <form method="post" ng-submit="registerUser()" name="signupForm">
+          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.userName.$invalid && signupForm.userName.$dirty }">
+            <input class="form-control input-lg" type="text" name="userName" ng-model="user.userName" placeholder="Name" required autofocus>
             <span class="ion-person form-control-feedback"></span>
-            <div class="help-block text-danger" ng-if="signupForm.displayName.$dirty" ng-messages="signupForm.displayName.$error">
+            <div class="help-block text-danger" ng-if="signupForm.userName.$dirty" ng-messages="signupForm.userName.$error">
               <div ng-message="required">You must enter your name.</div>
             </div>
           </div>

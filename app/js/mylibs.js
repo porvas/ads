@@ -81,18 +81,6 @@ myApp.config(['$routeProvider', function ($routeProvider) {
                     templateUrl: 'signup/signup.html',
                     controller: 'SignupController'
                 }).
-                when('/training', {
-                    templateUrl: 'training.html',
-                    controller: 'ShellController'
-                }).
-                when('/page2', {
-                    templateUrl: 'page2.html',
-                    controller: 'ShellController'
-                }).
-                when('/page3', {
-                    templateUrl: 'page3.html',
-                    controller: 'ShellController'
-                }).
                 otherwise({
                     redirectTo: 'home.html'
                 });
@@ -104,11 +92,13 @@ myApp.controller("FooterController", ['$scope', function($scope) {
 	$scope.footer="Company 2015";
 }]);
 myApp.directive('footer', function () {
+	"use strict";
+	
     return {
         restrict: 'E', //This menas that it will be used as an attribute and NOT as an element. I don't like creating custom HTML elements
         templateUrl: "footer/footer.html",
         controller: "FooterController"
-    }
+    };
 });
 myApp.controller("HeaderController", ['$scope', '$location', '$auth', 'User', '$rootScope', 
     function($scope, $location, $auth, User, $rootScope) {
@@ -150,61 +140,104 @@ myApp.controller("HeaderController", ['$scope', '$location', '$auth', 'User', '$
 }]);
 
 myApp.directive('header', function () {
+	"use strict";
+	
     return {
         restrict: 'E', //This menas that it will be used as an attribute and NOT as an element. I don't like creating custom HTML elements
         templateUrl: "header/header.html",
         controller: "HeaderController"
-    }
-});
-myApp.controller('LoginController', ['$scope', '$auth','$http','$rootScope',  function($scope, $auth,$http,$rootScope) {
-    $scope.login = function() {
-        var user = {
-            grant_type:"password",
-            username: $scope.email,
-            password: $scope.password
-        };    
-        
-        var req = {
-            method: 'POST',
-            url: 'http://localhost/APIService/api/oauth/token',
-            headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            data: "userName=" + "test@gmail.com" + "&password=" + "FirstPassword" + 
-              "&grant_type=password"
-        };
-
-        $http(req).then(function(response){
-            console.log("LOGGED IN: " + response.data.access_token);
-            $auth.setToken(response.data.access_token);
-            $rootScope.name = "Porfyrios";
-        }, function(){
-            console.log("ERROR");
-        });         
-        
-//        $auth.login(user)
-//          .then(function(response) {
-////            toastr.success('You have successfully signed in');
-//              console.log("LOGGED IN");
-//              $location.path('/');
-//          })
-//          .catch(function(response) {
-//              console.log("ERROR LOGGING IN")
-////            toastr.error(response.data.message, response.status);
-//          });
     };
-    
-    $scope.authenticate = function(provider) {
-      $auth.authenticate(provider)
-        .then(function() {
-          toastr.success('You have successfully signed in with ' + provider);
-          $location.path('/');
-        })
-        .catch(function(response) {
-          toastr.error(response.data.message);
-        });
-    };        
-}]);
+});
+myApp.controller('SignupController', function ($scope, $location, $auth, userAccount) {
+    var vm = $scope;
+	
+	vm.user = {
+		userName: "",
+		email: "",
+		password: "",
+		confirmPassword: ""
+	};
+	vm.testuser = {
+		userName: "Test",
+		email: "test@gmail.com",
+		password: "Test123",
+		confirmPassword: "Test123"
+	};
+	
+	
+	$scope.registerUser = function(){
+		vm.user = vm.testuser;
+		vm.user.confirmPassword = vm.user.password;
+		userAccount.registerUser(vm.user,
+			function(data){
+				vm.user.confirmPassword="";
+				vm.message="... Registration successful";
+				console.log("SUCCESS: " + vm.message);
+			},
+			function(response){
+				vm.isLoggedIn = false;
+				console.log("FAILED: " + response);
+//				vm.message = response.statusText + "\r\n";
+//				if (response.data.exceptionMessage) {
+//					vm.message += response.data.exceptionMessage;
+//				}
+//				if (response.data.modelState) {
+//					for (var key in response.data.modelState) {
+//						vm.message += response.data.modelState[key] + "\r\n";
+//					}
+//				}
+			});
+	};	
+});
+(function(){
+	"use strict"
+	
+	angular
+		.module("myApp")
+		.controller("LoginController",
+					["userAccount", '$auth',
+						LoginCtrl]);
+						
+	function LoginCtrl(userAccount, $auth) {
+		var vm = this;
+		vm.message = "";
+		vm.userlogin = {
+			email: "",
+			password: ""
+		};
+		vm.usersignup = {
+			userName: "",
+			email: "",
+			password: "",
+			confirmPassword: ""
+		};
+		
+		vm.login = function(){
+			vm.userlogin.grant_type = "password";
+			
+			userAccount.login.loginUser(vm.userlogin,
+				function(data) {
+					vm.isLoggedIn = true;
+					vm.message = "";
+					vm.password = "";
+					$auth.setToken(data.access_token);
+					vm.token=data.access_token;
+					console.log("LOGGED IN: " + JSON.stringify($auth.getPayload()));
+				},
+				function (response) {
+					vm.isLoggedIn = false;
+					vm.message = response.statusText + "\r\n";
+					vm.password = "";
+					if (response.data.exceptionMessage) {
+						vm.message += response.data.exceptionMessage;
+					}
+					if (response.data.error) {
+						vm.message += response.data.error;
+					}
+				});
+		};
+	}
+}());
 (function(){
     "use strict"
     
@@ -249,8 +282,6 @@ myApp.controller('LoginController', ['$scope', '$auth','$http','$rootScope',  fu
             });        
         }        
     }
-    
-
 }());
 //
 //myApp.controller("SearchBarController", ['$scope', 'Category', 'Subcategory', function($scope, Category, Subcategory) {

@@ -9,7 +9,7 @@
                  categoryResource]);
                  
     function categoryResource($resource, appSettings) {
-        return $resource(appSettings.serverPath + "api/Categories/:id")
+        return $resource(appSettings.serverPath + "api/Categories/:id");
     }
 }());
 
