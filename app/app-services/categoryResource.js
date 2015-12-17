@@ -2,7 +2,7 @@
     "use strict"
     
     angular
-        .module("common.services")
+        .module("myApp.services")
         .factory("categoryResource", 
                 ["$resource", 
                  "appSettings", 

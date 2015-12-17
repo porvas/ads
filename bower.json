@@ -5,7 +5,7 @@
   "homepage": "https://github.com/angular/angular-seed",
   "license": "MIT",
   "private": true,
-  "dependencies": {
+  "dependencies": {"ui-router": "0.2.15",
     "angular": "~1.4.0",
     "angular-route": "~1.4.0",
     "angular-resource": "latest",
@@ -15,7 +15,9 @@
     "angular-bootstrap": "0.14.3",
     "bootstrap": "latest",
     "ui-bootstrap": "latest",
-    "jquery": "latest"
+    "jquery": "latest",
+    "angular-messages": "1.4.8",
+    "angular-ui-router": "ui-router#0.2.15"
   },
   "install": {
     "path": "app/scripts/",
@@ -36,7 +38,9 @@
         "app/bower_components/bootstrap/dist/js/bootstrap.js"
       ],
       "angular-resource": "app/bower_components/angular-resource/angular-resource.min.js",
-      "ui-bootstrap": "app/bower_components/satellizer/satellizer.min.js"
+      "ui-bootstrap": "app/bower_components/satellizer/satellizer.min.js",
+      "angular-messages": "app/bower_components/angular-messages/angular-messages.min.js",
+      "ui-router": "app/bower_components/ui-router/release/angular-ui-router.min.js"
     }
   }
 }

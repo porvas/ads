@@ -4,8 +4,8 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
  // Concatenate JS Files
 gulp.task('scripts', function() {
-    return gulp.src(['app/app.js', 'app/app-controller.js', 'app/footer/*.js', 'app/header/*.js',
-                     'app/signup/*.js','app/login/*.js','app/search_bar/*.js', 'app/common/adthumb/*.js'])
+    return gulp.src(['app/footer/*.js',
+        'app/search_bar/*.js', 'app/common/adthumb/*.js'])
       .pipe(concat('mylibs.js'))
       .pipe(gulp.dest('app/js'));
 });

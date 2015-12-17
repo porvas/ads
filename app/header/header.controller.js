@@ -1,38 +1,22 @@
-myApp.controller("HeaderController", ['$scope', '$location', '$auth', 'User', '$rootScope', 
-    function($scope, $location, $auth, User, $rootScope) {
+myApp.controller("HeaderController", ['$scope', '$location', 'auth', 'User', '$rootScope', 
+    function($scope, $location, auth, User, $rootScope) {
+        var vm = this;
+        vm.guestName = "Guest";
+        vm.name = vm.guestName;
+        $rootScope.$on('loginStatusChanged', function(event, isLoggedIn){
+            var payload = auth.parseJwt(auth.getToken());
+            console.log("payload", payload);
+            User.get({id: payload.nameid}, function (userData) {
+                vm.name = userData.User.FirstName;  
+            });
+        });
     
-    $scope.name = "Guest";
-    
-//    $rootScope.$watch('name', function(){
-//        $scope.name = "Guest";
-//        if ($rootScope.name.trim() !== "") {
-//            $scope.name = $rootScope.name;
-//        }
-//    });
-//    
-//    $scope.logout = function() {
-//        $auth.logout()
-//            .then(function () {
-//                console.log('You have been logged out');
-//                $rootScope.name = "Guest";
-//                $location.path('/');
-//        });
-//    }
+        this.logout = function() {
+            auth.logout();
+            vm.name = vm.guestName;
+        };
 
-//    $scope.name = function() {
-//        if ($scope.isAuthenticated()) {
-//            var user = User.get({id: $scope.getUserId()}, function () {
-//                console.log("USER: " + JSON.stringify(user));
-//            }); // get() returns a single entry   
-//            return user.FirstName;
-//        } else {
-//            return "Guest";
-//        }
-//    };
-    
-    $scope.isAuthenticated = function() {
-      return $auth.isAuthenticated();
-    };  
-    
-
+        this.isAuthenticated = function() {
+          return auth.isAuthed();
+        };  
 }]);

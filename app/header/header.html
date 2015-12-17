@@ -23,10 +23,11 @@
                     </div>-->
                     
                     <div class="header-buttons pull-right">
-                            <span >Welcome {{name}}!</span>
-                            <a ng-if="!isAuthenticated()" href="#login">Login</a>
-                            <a ng-if="!isAuthenticated()" href="#signup">Sign Up</a>
-                            <a ng-if="isAuthenticated()" ng-click="logout()" href="#logout">Logout</a>
+                            <span >Welcome {{vm.name}}!</span>
+                            <a ui-sref="home">Home</a>
+                            <a ng-if="!vm.isAuthenticated()" ui-sref="login">Login</a>
+                            <a ng-if="!vm.isAuthenticated()" ui-sref="signup">Sign Up</a>
+                            <a ng-if="vm.isAuthenticated()" ng-click="vm.logout()" ui-sref="home">Logout</a>
                       
                       <a href="#">Help</a>
                       <a href="#">My Mantra</a>

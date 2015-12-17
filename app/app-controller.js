@@ -2,27 +2,29 @@ myApp.controller("ShellController", function ($scope) {
 
 });
 
-myApp.config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.
-                when('/', {
-                    templateUrl: 'home.html',
-                    controller: 'ShellController'
-                }).
-                when('/home', {
-                    templateUrl: 'home.html',
-                    controller: 'ShellController'
-                }).
-                when('/login', {
-                    templateUrl: 'login/login.html',
-                    controller: 'LoginController'
-                }).
-                when('/signup', {
-                    templateUrl: 'signup/signup.html',
-                    controller: 'SignupController'
-                }).
-                otherwise({
-                    redirectTo: 'home.html'
-                });
-    }]);
+myApp.config(['$stateProvider', '$urlRouterProvider', configureApp]);
 
+function configureApp($stateProvider, $urlRouterProvider){
+    $stateProvider
+      .state("home", {
+        url: "/home",
+        templateUrl: "home.html",
+        controller: "ShellController",
+        authenticate: false
+      })
+      .state("login", {
+        url: "/login",
+        templateUrl: "login/login.html",
+        controller: "LoginController as vm",
+        authenticate: false
+      })
+      .state("signup", {
+        url: "/signup",
+        templateUrl: "signup/signup.html",
+        controller: "SignupController",
+        authenticate: false
+      });
+    // Send to login if the URL was not found
+    $urlRouterProvider.otherwise("/home");
+}
 
