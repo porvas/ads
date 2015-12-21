@@ -1,4 +1,6 @@
-myApp.directive('footer', function () {
+angular
+    .module("myApp")
+    .directive('footer', function () {
 	"use strict";
 	
     return {

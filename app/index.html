@@ -8,6 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>theMantra Buy and Sell</title>
   <meta name="description" content="">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,greek' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="scripts/html5-boilerplate/normalize.css">
   <link rel="stylesheet" href="scripts/html5-boilerplate/main.css">
@@ -20,34 +22,50 @@
   <link rel="stylesheet" href="css/hover.css">
   <script src="scripts/html5-boilerplate/modernizr-2.8.3.min.js"></script>
 </head>
-<body ng-app="myApp" class="ng-cloak">
-    <div ng-controller="ShellController">
+<body ng-app="myApp" class="ng-cloak back">
+    <div ng-controller="ShellController" class="back">
         <header></header>
         <searchbar></searchbar>
-        <div class="container-fluid" ui-view></div>
-        <div class="container">
+        <div class="container-fluid back" ui-view></div>
+        <div class="container back">
             <hr>
         </div>
+    
+        <footer></footer>
     </div>
-    <footer></footer>
   <script src="scripts/angular/angular.js"></script>
   <script src="scripts/angular-resource/angular-resource.min.js"></script>
   <script src="scripts/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="scripts/angular-messages/angular-messages.min.js"></script>
   <script src="bower_components/ui-router/release/angular-ui-router.min.js" type="text/javascript"></script>
+  
   <script src="app.js" type="text/javascript"></script>
+  <script src="ad/post/postad.controller.js" type="text/javascript"></script>
   <script src="app-controller.js" type="text/javascript"></script>
+  
+  <script src="common/adthumb/adthumb.directive.js" type="text/javascript"></script>
+  <script src="common/adthumb/adthumb.controller.js" type="text/javascript"></script>
+  
+  <script src="common/password/passwordStrength.js" type="text/javascript"></script>
+  <script src="common/password/passwordMatch.js" type="text/javascript"></script>
+  
   <script src ="app-services/common.services.js"></script>
   <script src ="app-services/categoryResource.js"></script>
   <script src="app-services/authService.js" type="text/javascript"></script>
   <script src ="app-services/userService.js"></script>
-  <script src="common/password/passwordStrength.js" type="text/javascript"></script>
-  <script src="common/password/passwordMatch.js" type="text/javascript"></script>
+  <script src="app-services/authInterceptor.js" type="text/javascript"></script>
+  
   <script src="login/login.controller.js" type="text/javascript"></script>
   <script src="signup/signup.controller.js" type="text/javascript"></script>
   <script src="header/header.controller.js" type="text/javascript"></script>
   <script src="header/header.directive.js" type="text/javascript"></script>
-  <script src ="js/mylibs.js"></script>
+  
+  <script src="footer/footer.controller.js" type="text/javascript"></script>
+  <script src="footer/footer.directive.js" type="text/javascript"></script>
+  
+  <script src="search_bar/searchbar.controller.js" type="text/javascript"></script>
+  <script src="search_bar/searchbar.directive.js" type="text/javascript"></script>
+  
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

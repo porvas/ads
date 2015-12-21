@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2 back">
+          <!--<div class="panel-body">-->
+            <h2 class="text-center">Post Ad</h2>
+            <form method="post" ng-submit="submit()" name="postAddForm">
+              <div class="form-group has-feedback" ng-class="{ 'has-error' : postAddForm.category.$invalid && !postAddForm.category.$pristine }">
+                <label for="category">Select category:</label>
+                <select class="form-control" id="category" name="category" ng-model="ad.category" placeholder="Select category..." required>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>            
+                <span class="ion-person form-control-feedback"></span>
+                <div class="help-block text-danger" ng-show="postAddForm.category.$invalid && !postAddForm.category.$pristine" ng-messages="postAddForm.firstName.$error">
+                  <div ng-message="required">You must select a category.</div>
+                </div>
+              </div>
+              <div class="form-group has-feedback" ng-class="{ 'has-error' : postAddForm.subcategory.$invalid && !postAddForm.subcategory.$pristine }">
+                <label for="category">Select Sub Category:</label>
+                <select class="form-control" id="category" name="subcategory" ng-model="ad.subcategory" placeholder="Select subcategory..." required>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>            
+                <span class="ion-person form-control-feedback"></span>
+                <div class="help-block text-danger" ng-show="postAddForm.subcategory.$invalid && !postAddForm.subcategory.$pristine" ng-messages="postAddForm.subcategory.$error">
+                  <div ng-message="required">You must select a subcategory.</div>
+                </div>
+              </div>
+              <div class="form-group has-feedback" ng-class="{ 'has-error' : postAddForm.location.$invalid && !postAddForm.location.$pristine }">
+                <label for="category">Select location:</label>
+                <select class="form-control" id="category" name="location" ng-model="ad.location" placeholder="Select location..." required>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>            
+                <span class="ion-person form-control-feedback"></span>
+                <div class="help-block text-danger" ng-show="postAddForm.location.$invalid && !postAddForm.location.$pristine" ng-messages="postAddForm.firstName.$error">
+                  <div ng-message="required">You must select a location.</div>
+                </div>
+              </div>
+                <div class="form-group" ng-class="{ 'has-error' : postAddForm.price.$invalid && !postAddForm.price.$pristine }">
+                  <label for="price">Price:</label>
+                    <div class="input-group"> 
+                        <span class="input-group-addon">$</span>
+                        <input class="form-control" type="number" ng-model="ad.price" name="price" id="price" required/>
+                    </div>                  
+                  <span class="ion-person form-control-feedback"></span>
+                  <div class="help-block text-danger" ng-show="postAddForm.price.$invalid && !postAddForm.price.$pristine" ng-messages="postAddForm.price.$error">
+                    <div ng-message="required">You must enter a price.</div>
+                  </div>
+                </div>   
+              <div class="form-group has-feedback" ng-class="{ 'has-error' : postAddForm.desc.$invalid && postAddForm.desc.$dirty }">
+                <label for="desc">Description:</label>
+                <textarea class="form-control" rows="5" id="desc" name="desc" ng-model="ad.desc" minlength="10" maxlength="1000" required></textarea>
+                <span class="ion-person form-control-feedback"></span>
+                <div class="help-block text-danger" ng-show="postAddForm.desc.$invalid && !postAddForm.desc.$pristine" ng-messages="postAddForm.desc.$error">
+                  <div ng-message="required">You must enter a description</div>
+                  <div ng-message="minlength">Please enter a description of more than 10 characters</div>
+                  <div ng-message="maxlength">Description should be less than 1000 characters</div>
+                </div>
+              </div>                
+                <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-lg btn-block btn-primary">Post Ad</button>                
+            </form>
+          </div>
+        </div>
+      <!--</div>-->
+    </div>
+</div>

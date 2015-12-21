@@ -8,7 +8,7 @@ body {
   padding:0px;
   height: 100%;
   width: 100%;
-  font-family: "Ubuntu", Helvetica, Arial, sans-serif!important;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   background: white;
   color: #666;
@@ -24,18 +24,21 @@ h6 {
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header {
-  font-size: 18px;
-  background:#940F35;
   padding:10px;
   padding-top: 0px;
   padding-bottom: 0px;
   margin:0px;
   border: none;
   border-radius: 0px;
-  box-shadow: 0px 0px 10px  #000;
+  /* box-shadow: 0px 0px 10px  #000; */
+  background-color: #86142A;
 }
 .latest-ads{
     
+}
+
+.back {
+    background-color: #F9F9F9 !important;
 }
 
 .multiple-ads-container{
@@ -51,7 +54,7 @@ h6 {
 }
 
 .logo{
-	text-align:center;
+    text-align:center;
 }
 
 .logoMain{
@@ -71,7 +74,7 @@ h6 {
 }
 
 .search-bar {
-    background-color: rgb(81, 105, 130);
+    background-color: rgb(224, 225, 226);
     border-radius: 0px;
     padding-top:10px;
     padding-bottom: 10px;
@@ -79,13 +82,13 @@ h6 {
 }
 
 .post-ad-btn:hover{
-    background-color: #69B91C;
+    /*background-color: rgba(68,109,138,1);*/
     color: white;
 }
 
 .post-ad-btn {
     margin-left: 15px;
-    background-color: rgb(81, 105, 130);
+    /*background-color: rgba(68,109,138,1);*/
     color: white;
 }
 .header-buttons.pull-right{
@@ -106,10 +109,10 @@ h6 {
     color: #EAE7E8;
     margin-top:0px;
     margin-bottom: 0px;
-    -moz-transition: all .2s ease-in;
+/*    -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
+    transition: all .2s ease-in;*/
     padding: 5px;
 }
 
