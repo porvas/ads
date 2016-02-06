@@ -1,0 +1,22 @@
+<ng-form name="LocationForm">
+<div class="form-group">
+    <div class="form-group has-feedback" ng-class="{ 'has-error' : LocationForm.location.$invalid && !LocationForm.location.$pristine }">
+      <label for="category">Select location:</label>
+      <select ng-options="loc.id as loc.name for loc in locations" class="form-control" id="location" name="location" ng-model="ad.location" placeholder="Select location..." required>
+        <option value="">Location not specified...</option>
+      </select>            
+      <span class="ion-person form-control-feedback"></span>
+      <div class="help-block text-danger" ng-show="LocationForm.location.$invalid && !LocationForm.location.$pristine" ng-messages="LocationForm.firstName.$error">
+        <div ng-message="required">You must select a location.</div>
+      </div>
+    </div>
+</div>
+
+<div class="form-group row">
+<div class="col-xs-offset-9 col-xs-3">
+    <button ng-disabled="LocationForm.$invalid" ng-click="next(2, LocationForm)" class="btn btn-block next-section-btn">
+        <a>Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+    </button>
+</div>
+</div>
+</ng-form>

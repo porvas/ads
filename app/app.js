@@ -6,7 +6,10 @@ var myApp = angular.module('myApp', [
     'ngResource',
     'ui.bootstrap',
     'ngMessages',
-    'ui.router'
+    'ui.router',
+    'ngAnimate',
+    'ngFileUpload',
+    'ngStorage'
   ]);
 
 angular.module('myApp').factory('Subcategory', function($resource) {

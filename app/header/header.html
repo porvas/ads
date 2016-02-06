@@ -1,40 +1,40 @@
 <div class="header navbar navbar-default" role="navigation">
-	<div class="container-fluid">
-            <div class="container">
-		<div class="navbar-header">
-			<div class="container-fluid logo" style="background-color: #FFF;">
-				<!--<img src="http://www.privateinstituteoflaw.com/wp-content/uploads/2014/10/Logo_PIL.png" alt="" style="max-width: 180px;">-->
-			</div>
-			<div class="container-fluid">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			  <span class="sr-only">Toggle navigation</span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			</button>
-			</div>
-		</div>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="container-fluid logo" style="background-color: #FFF;">
+                    <!--<img src="http://www.privateinstituteoflaw.com/wp-content/uploads/2014/10/Logo_PIL.png" alt="" style="max-width: 180px;">-->
+                </div>
+                <div class="container-fluid">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </div>
 
 
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<!--                    <div class="pull-left">
-                        <a href="#home" title="Return to the homepage" >
-                            <img src="http://www.fnordware.com/superpng/pngtest8rgba.png" alt="Logo" class="logoMain"/>
-                        </a>
-                    </div>-->
-                    
-                    <div class="header-buttons pull-right">
-                            <span >Welcome {{vm.name}}!</span>
-                            <a ui-sref="home">Home</a>
-                            <a ng-if="!vm.isAuthenticated()" ui-sref="login">Login</a>
-                            <a ng-if="!vm.isAuthenticated()" ui-sref="signup">Sign Up</a>
-                            <a ng-if="vm.isAuthenticated()" ng-click="vm.logout()" ui-sref="home">Logout</a>
-                      
-                      <a href="#">Help</a>
-                      <a href="#">My Mantra</a>
-                      <div class="btn btn-success post-ad-btn"><a ui-sref="postad">Post your add!</a></div>
-                    </div>
-		</div>
-	</div>
+            <div class="collapse navbar-collapse" style="padding-right: 0px;" id="bs-example-navbar-collapse-1">
+                <!--                    <div class="pull-left">
+                                        <a href="#home" title="Return to the homepage" >
+                                            <img src="http://www.fnordware.com/superpng/pngtest8rgba.png" alt="Logo" class="logoMain"/>
+                                        </a>
+                                    </div>-->
+
+                <div class="header-buttons pull-right">
+                    <span >Welcome {{vm.name}}!</span>
+                    <a ui-sref="home">Home</a>
+                    <a ng-if="!vm.isAuthenticated()" ui-sref="login">Login</a>
+                    <a ng-if="!vm.isAuthenticated()" ui-sref="signup">Sign Up</a>
+                    <a ng-if="vm.isAuthenticated()" ng-click="vm.logout()" ui-sref="home">Logout</a>
+
+                    <a href="#">Help</a>
+                    <a href="#">My Mantra</a>
+                    <div class="btn btn-success post-ad-btn"><a ui-sref="postad.category">Post new Ad</a></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

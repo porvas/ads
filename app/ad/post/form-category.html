@@ -1,0 +1,32 @@
+<!-- form-profile.html -->
+<ng-form name="CategoryForm">
+    <div class="form-group has-feedback" ng-class="{ 'has-error' : CategoryForm.category.$invalid && !CategoryForm.category.$pristine}">
+        <label for="category">Select category:</label>
+        <select ng-options="cat.id as cat.name for cat in categories" class="form-control" id="category" name="category" ng-model="ad.category" ng-change="catSelected()" placeholder="Select category..." required>
+            <option value="">Category not specified...</option>
+        </select>
+        <span class="ion-person form-control-feedback"></span>
+        <div class="help-block text-danger" ng-show="CategoryForm.category.$invalid && !CategoryForm.category.$pristine" ng-messages="CategoryForm.firstName.$error">
+            <div ng-message="required">You must select a category.</div>
+        </div>
+    </div>
+    <div class="form-group has-feedback" ng-class="{ 'has-error' : CategoryForm.subcategory.$invalid && !CategoryForm.subcategory.$pristine }">
+        <label for="subcategory">Select Sub Category:</label>
+        <select ng-options="subcat.id as subcat.name for subcat in subcats" class="form-control" id="subcategory" name="subcategory" ng-model="ad.subcategory" placeholder="Select subcategory..." required>
+            <option value="">Subcategory not specified...</option>
+        </select>
+        <span class="ion-person form-control-feedback"></span>
+        <div class="help-block text-danger" ng-show="CategoryForm.subcategory.$invalid && !CategoryForm.subcategory.$pristine" ng-messages="CategoryForm.subcategory.$error">
+            <div ng-message="required">You must select a subcategory.</div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-offset-9 col-xs-3">
+            <button ng-click="next(1, CategoryForm)" ng-disabled="CategoryForm.$invalid" class="btn btn-block next-section-btn">
+                <a>
+                    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                </a>
+            </button>
+        </div>
+    </div>
+</ng-form>

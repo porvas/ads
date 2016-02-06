@@ -26,21 +26,33 @@
             <file>file:/C:/porf/ads/app/login/login.controller.js</file>
         </group>
         <group>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/footer/footer.controller.js</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/css/app.css</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/ad/post/form-payment.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/ad/post/form.html</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/home/home.html</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/common/adthumb/adthumb.controller.js</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/header/header.directive.js</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/footer/footer.directive.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/ad/post/form-price.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/ad/post/form-location.html</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/app.js</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/signup/signup.html</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/common/adthumb/adthumb.directive.js</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/index.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/app-services/common.services.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/common/adthumb/adthumb.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/ad/post/modalImage.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/app-controller.js</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/ad/post/postad.controller.js</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/ad/post/postad.html</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/gulpfile.js</file>
-            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/header/header.html</file>
             <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/index-async.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/app-services/authService.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/footer/footer.controller.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/app-services/authInterceptor.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/ad/post/form-images.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/css/app.css</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/common/adthumb/adthumb.controller.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/ad/post/form-category.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/footer/footer.directive.js</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/signup/signup.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/index.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/ad/post/postad.html</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/bower.json</file>
+            <file>file:/C:/Users/porfyrios/Documents/NetBeansProjects/HTML5Application1/app/ad/post/form-description.html</file>
         </group>
     </open-files>
 </project-private>

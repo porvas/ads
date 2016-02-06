@@ -1,0 +1,58 @@
+<ng-form name="ImagesForm">
+    <p class='text-info'>Note: You can add up to 5 images. Make sure the images are as as clear as possible.</p>
+
+    <div class="row">
+        <div ng-show="images[0]" class = "col-sm-6 col-md-6">
+            <a href = "#" ng-click="openModal(0)" class = "thumbnail thumbnail-big img-wrap">
+                <span ng-click="removeImage(0)" class="close fa-stack fa-lg">
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fa fa-close fa-stack-1x fa-inverse"></i>
+                </span>
+                <div style="height:100%;width:100%;display:flex;">
+                    <img class="vertical-align-thumbnail" ngf-size="{width: 300, height: 300}" ngf-thumbnail="images[0]">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="vertical-align-thumbnail thumbnail-big-image" ngf-thumbnail="images[0]">
+                </div>
+            </a>
+        </div>
+        <div ng-repeat="image in images| limitTo:images.length - 1:1">
+            <div class = "col-sm-7 col-md-3">
+                <a href='#' ng-click="openModal($index + 1)" class = "thumbnail  thumbnail-small img-wrap">
+                    <!--                    <span ng-click="removeImage($index+1)" class="close fa-stack fa-lg">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-close fa-stack-1x fa-inverse"></i>
+                                        </span>                   -->
+                    <div class="thumbnail-container">
+                        <img class="vertical-align-thumbnail thumbnail-small-image" ngf-thumbnail="image">
+                    </div>
+                </a>             
+            </div>
+        </div>
+
+        <div ng-hide="images.length > 4" class = "col-sm-6 col-md-3">
+            <a class = "thumbnail  thumbnail-small">
+                <div class="addphoto" ngf-select="addImage($file, $invalidFiles)" ng-model="file" name="file" ngf-pattern="'image/*'"
+                     ngf-accept="'image/*'" ngf-max-size="2MB" ngf-min-height="100">
+                    <span class="glyphicon glyphicon-plus"></span> Add Image
+                </div>
+            </a>             
+        </div>
+    </div>
+    <div ng-show="errFile.$error === 'maxSize'">
+        <p class='text-warning'>* Error: Image size must be less than {{errFile.$errorParam}}</p>
+    </div>
+    <div ng-show="errFile.$error === 'minHeight'">
+        <p class='text-warning'>* Error: Image height must be bigger than {{errFile.$errorParam}}px</p>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-offset-9 col-xs-3">
+            <button ng-click="next(5, ImagesForm)" ng-disabled="images.length === 0" class="btn btn-block next-section-btn">
+                <a>
+                    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                </a>
+            </button>
+        </div>
+    </div>
+</ng-form>
+<button type="button" class="btn btn-primary" >Popup image</button>

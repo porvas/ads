@@ -27,11 +27,38 @@ function configureApp($stateProvider, $urlRouterProvider){
         controller: "SignupController",
         authenticate: false
       })
-      .state("postad", {
-        url: "/postad",
-        templateUrl: "ad/post/postad.html",
-        controller: "PostController",
-        authenticate: true
+      // route to show our basic form (/form)
+      .state('postad', {
+          url: '/postad',
+          templateUrl: 'ad/post/form.html',
+          controller: 'PostAdController'
+      })
+      // nested states 
+      // each of these sections will have their own view
+      // url will be nested (/form/profile)
+      .state('postad.category', {
+          url: '/category',
+          templateUrl: 'ad/post/form-category.html'
+      })
+      .state('postad.location', {
+          url: '/location',
+          templateUrl: 'ad/post/form-location.html'
+      })
+      .state('postad.description', {
+          url: '/description',
+          templateUrl: 'ad/post/form-description.html'
+      })
+      .state('postad.price', {
+          url: '/price',
+          templateUrl: 'ad/post/form-price.html'
+      })
+      .state('postad.images', {
+          url: '/images',
+          templateUrl: 'ad/post/form-images.html'
+      })
+      .state('postad.submit', {
+          url: '/submit',
+          templateUrl: 'ad/post/form-submit.html'
       });
     // Send to login if the URL was not found
     $urlRouterProvider.otherwise("/home");

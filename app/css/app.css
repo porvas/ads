@@ -4,14 +4,15 @@
 
 html,
 body {
-  margin:0px;
-  padding:0px;
-  height: 100%;
-  width: 100%;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  background: white;
-  color: #666;
+    padding-top: 10px;
+    margin:0px;
+    padding:0px;
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background: white;
+    color: #666;
 }
 
 h1,
@@ -20,21 +21,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-family: 'Montserrat', 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header {
-  padding:10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin:0px;
-  border: none;
-  border-radius: 0px;
-  /* box-shadow: 0px 0px 10px  #000; */
-  background-color: #86142A;
+    padding:10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin:0px;
+    border: none;
+    border-radius: 0px;
+    /* box-shadow: 0px 0px 10px  #000; */
+    background-color: #86142A;
 }
 .latest-ads{
-    
+
 }
 
 .back {
@@ -58,11 +59,11 @@ h6 {
 }
 
 .logoMain{
-     text-align:center;
-     height: 40px;
-     margin-top:-10px;
-     margin-bottom: -10px;
-     padding:0px;
+    text-align:center;
+    height: 40px;
+    margin-top:-10px;
+    margin-bottom: -10px;
+    padding:0px;
 }
 
 .vertically-align-outer {
@@ -76,8 +77,8 @@ h6 {
 .search-bar {
     background-color: rgb(224, 225, 226);
     border-radius: 0px;
-    padding-top:10px;
-    padding-bottom: 10px;
+    /* padding-top:10px; */
+    /* padding-bottom: 10px; */
     width:100%;
 }
 
@@ -88,7 +89,9 @@ h6 {
 
 .post-ad-btn {
     margin-left: 15px;
-    /*background-color: rgba(68,109,138,1);*/
+    background-color: rgb(54, 92, 119);
+    border-color: black;
+    border-radius: 5px;
     color: white;
 }
 .header-buttons.pull-right{
@@ -109,10 +112,10 @@ h6 {
     color: #EAE7E8;
     margin-top:0px;
     margin-bottom: 0px;
-/*    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;*/
+    /*    -moz-transition: all .2s ease-in;
+        -o-transition: all .2s ease-in;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;*/
     padding: 5px;
 }
 
@@ -127,25 +130,296 @@ h6 {
 *********************/
 
 .btn-google-plus {
-  color: #fff;
-  background-color: #dd4b39;
-  border: 1px solid #d54331;
+    color: #fff;
+    background-color: #dd4b39;
+    border: 1px solid #d54331;
 }
 
 .btn-google-plus:hover,
 .btn-google-plus:focus {
-  color: #fff;
-  background-color: #cb3927;
+    color: #fff;
+    background-color: #cb3927;
 }
 
 .btn-facebook {
-  color: #fff;
-  background-color: #3b5998;
-  border: 1px solid #335190;
+    color: #fff;
+    background-color: #3b5998;
+    border: 1px solid #335190;
 }
 
 .btn-facebook:hover,
 .btn-facebook:focus {
-  color: #fff;
-  background-color: #294786;
+    color: #fff;
+    background-color: #294786;
+}
+
+.text-white {
+    color:white;
+}
+
+.next-section-btn {
+    margin-top:10px;
+    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease;
+    background: #5D809E;
+}
+.next-section-btn[disabled] {
+    background-color: rgba(69, 155, 197, 0.2);
+}
+
+.next-section-btn[disabled]:hover {
+    background-color: rgba(69, 155, 197, 0.2);
+}
+
+.next-section-btn:hover {
+    background: rgba(95, 159, 226, 0.72);
+}
+
+.next-section-btn a {
+    color:white;
+}
+.next-section-btn a:hover {
+    color:white;
+}
+.next-section-btn[disabled] a{
+}
+.next-section-btn[disabled] a:hover{
+    text-decoration: none;
+}
+
+/* form styling */
+#form-container                {
+    background: #EAEAEA;
+    margin-bottom:20px;
+    margin-top: 10px;
+    border-radius:5px;
+}
+#form-container .page-header   {
+    background: #5D809E;
+    margin:0;
+    padding:20px;
+    border-top-left-radius:10px; 
+    border-top-right-radius:10px; 
+}
+
+/* numbered buttons */
+#status-buttons {}
+#status-buttons a { 
+    color:#FFF; 
+    display:inline-block;
+    font-size:12px; 
+    margin-right:10px; 
+    text-align:center; 
+    text-transform:uppercase;
+    text-decoration:none; 
+}
+#status-buttons a:hover { 
+    text-decoration:none; 
+}
+
+/* we will style the span as the circled number */
+#status-buttons span {
+    background: rgba(255, 255, 255, 0.21);
+    font-size: 18px;
+    display: block;
+    height: 50px;
+    margin:0 auto 10px;
+    padding-top: 13px;
+    width: 50px;
+    border-radius: 100%;
+}
+#status-buttons span:hover {
+    background: rgba(95, 159, 226, 0.72);
+}
+
+/* active buttons turn light green-blue*/
+#status-buttons a.active span {
+    background: rgba(95, 159, 226, 0.72);
+    text-decoration:none; 
+}
+
+/* step done numbered buttons */
+#status-buttons .step-done-button a {
+    color:#FFF; 
+    display:inline-block;
+    font-size:12px; 
+    margin-right:10px; 
+    text-align:center; 
+    text-transform:uppercase;
+    text-decoration:none;
+}
+
+#status-buttons .step-done-button a:hover { 
+    text-decoration:none; 
+}
+
+/* we will style the span as the circled number */
+#status-buttons .step-done-button span {
+    font-size: 20px;
+    background: rgba(12, 165, 24, 0.21);
+    display: block;
+    height: 50px;
+    margin:0 auto 10px;
+    padding-top: 15px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+#status-buttons .step-done-button span:hover {
+    background: rgba(66, 222, 78, 0.72);
+}
+
+/* active buttons turn light green-blue*/
+#status-buttons a.active.step-done-button span  {
+    background: rgba(66, 222, 78, 0.72);
+    text-decoration:none;
+}
+
+
+/* ANIMATION STYLINGS
+============================================================================= */
+#postAddForm {
+    position:relative;
+    min-height: 300px;
+    overflow:hidden;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+}
+#form-views             { width:auto; }
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave      { position:absolute; left:30px; right:30px;
+                            transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
+}
+
+/* enter animation */
+#form-views.ng-enter            { 
+    -webkit-animation:slideInRight 0.5s both ease;
+    -moz-animation:slideInRight 0.5s both ease;
+    animation:slideInRight 0.5s both ease; 
+}
+
+/* leave animation */
+#form-views.ng-leave            { 
+    -webkit-animation:slideOutLeft 0.5s both ease;
+    -moz-animation:slideOutLeft 0.5s both ease;
+    animation:slideOutLeft 0.5s both ease;   
+}
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-200%); }
+}
+@-moz-keyframes slideOutLeft {  
+    to      { -moz-transform: translateX(-200%); }
+}
+@-webkit-keyframes slideOutLeft {
+    to      { -webkit-transform: translateX(-200%); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(200%); }
+    to      { transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+    from    { -moz-transform:translateX(200%); }
+    to      { -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+    from    { -webkit-transform:translateX(200%); }
+    to      { -webkit-transform: translateX(0); }
+}
+
+.thumbnail-small{
+    background-color: #F9F9F9;
+    display:table;
+    width: 100%;
+    height: 150px;
+    overflow: auto;
+}
+
+.thumbnail-big{
+    background-color: #F9F9F9;
+    height: 340px;
+    overflow: hidden;
+}
+
+.img-wrap {
+    position: relative;
+}
+.img-wrap .close {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    z-index: 100;
+}
+.addphoto{
+    background: rgb(249, 249, 249);
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+.vertical-align-thumbnail{
+    margin:auto;
+    padding: 0px;
+}
+
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+}
+.modal-content {/* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;/* To center horizontally */
+    margin: 0 auto;
+    pointer-events:all;
+}
+
+.modal-preview-image{
+    display: block;
+    margin: auto;
+    height: 400px;
+    max-height: 80%;
+    width: auto;
+    max-width: 100%;
+}
+
+.thumbnail-container{
+    height: 150px;
+    line-height: 150px;
+    max-height: 150px;
+    margin-bottom: 0px;
+    padding: 0px;
+    display: block;
+    max-width: 100%;
+    width: auto;
+}
+
+.thumbnail-small-image{
+    display: block;
+    margin: auto;
+    height: 150px;
+    max-width: 100%;
+}
+
+.thumbnail-big-image{
+    display: block;
+    margin: auto;
+    height: 300px;
+    max-width: 100%;
 }
